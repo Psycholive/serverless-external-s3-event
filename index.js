@@ -29,10 +29,17 @@ class S3Deploy {
         usage: 'Add lambda notifications to S3 buckets not defined in serverless.yml',
         options: {
           'continue-on-error' : {
-            usage: 'Can be used to attempt a partial deploy, where not all functions are available/deployed. They will be skipped and not attmepted.'
+            usage: 'Can be used to attempt a partial deploy, where not all functions are available/deployed. They will be skipped and not attmepted.',
+            type: 'boolean'
+          },
+          alias: {
+            usage: 'Name of the alias',
+            required: false,
+            type: 'string'
           },
           help: {
-            usage: 'See https://github.com/matt-filion/serverless-external-s3-event for detailed documentation.'
+            usage: 'See https://github.com/matt-filion/serverless-external-s3-event for detailed documentation.',
+            type: 'boolean'
           }
         }
       },
@@ -42,6 +49,27 @@ class S3Deploy {
       }
     };
 
+    this.serverless.configSchemaHandler.defineFunctionEvent('aws', 'existingS3', {
+      type: 'object',
+      properties: {
+        bucket: { type: 'string' },
+        events: { 
+          type: 'array',
+          items: {
+            type: 'string',
+          }
+        },
+        rules: { 
+          type: 'array',
+          items: {
+            type: 'object',
+          }
+        },
+      },
+      required: ['bucket', 'events'],
+      additionalProperties: false,
+    });
+    
     this.hooks = {
       'before:s3deploy:functions':this.beforeFunctions.bind(this),
       's3deploy:functions': this.functions.bind(this),

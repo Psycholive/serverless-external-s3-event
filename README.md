@@ -1,7 +1,11 @@
------
+# This plugin is a copy of [serverless-plugin-existing-s3](https://www.npmjs.com/package/serverless-plugin-existing-s3)
+**NEW**
+
+* Added support for serverless framework ver.3
+
 # DEPRECATED
 
-This functionality is now native to serverless. See the docs at https://serverless.com/framework/docs/providers/aws/events/s3#using-existing-buckets for more information.
+This functionality is now native to serverless (at the cost of extra resources). See the docs at https://serverless.com/framework/docs/providers/aws/events/s3#using-existing-buckets for more information.
 
 -----
 
