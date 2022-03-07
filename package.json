@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "Attach Lambda events to an existing S3 bucket, for Serverless.com 1.11.0+.",
   "main": "index.js",
-  "homepage": "https://github.com/matt-filion/serverless-external-s3-event",
+  "homepage": "https://github.com/Psycholive/serverless-external-s3-event",
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.1.2",
@@ -38,10 +38,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/matt-filion/serverless-external-s3-event"
+    "url": "https://github.com/Psycholive/serverless-external-s3-event"
   },
   "bugs": {
-    "url": "https://github.com/matt-filion/serverless-external-s3-event/issues"
+    "url": "https://github.com/Psycholive/serverless-external-s3-event/issues"
   },
   "author": {
     "name": "Matt Filion",
